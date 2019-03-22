@@ -1,0 +1,2865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>console</title>
+
+<!--CSS引用文件-->
+	<!-- <link type="image/x-icon" rel="icon" href="favic.ico" /> -->
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	<link rel="stylesheet" href="ku/bootstrap/css/bootstrap.min.css">			<!-- Bootstrap -->
+	<link rel="stylesheet" href="ku/Font-Awesome/css/font-awesome.min.css">		<!--font小图标-->
+	<link rel="stylesheet" href="ku/bootstrap/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="ku/bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="ku/layer/skin/layer.css">						<!--弹出层 layer插件-->
+	<link rel="stylesheet" href="ku/jquery-ui-1.12.0/jquery-ui.min.css">		<!--jQuery UI-->
+
+	<link rel="stylesheet" href="css/style.css?v4">
+	<link rel="stylesheet" href="css/ws_center.css?v4">
+<!--JS引用文件-->
+	<script src="js/utils.js"></script>
+	<script type="text/javascript">
+		platform();
+		window.token = wsStorage.getItem('token');
+        if(token == null){
+        	window.location.href = '/login.html';
+        }
+	</script>
+
+</head>
+<body>
+
+<div class="wrapper yemian">
+<!-- 头部 -->
+	<div class="container-fluid site_header">
+	<!--头部logo-->
+		<div class="ws_logo">
+			<a href="">
+				<img src="img/ws_logo.png" alt="">
+			</a>
+		</div>
+	<!--侧边栏隐藏按钮-->
+		<div class="hidden_slider fa fa-bars" data-value="1"></div>
+	<!--头部用户信息-->
+		<div class="header_right">
+		<!--用户名盒子-->
+			<div class="header_setting">
+				<div class="user_pic"><img src="img/login_logo.png" alt=""></div>
+				<div class="user_name" >
+					<span name="userName" title=""></span>
+					<i class="fa fa-caret-down"></i>
+				</div>
+			<!--用户名隐藏盒子-->
+				<div class="user_settings">
+					<div class="userSetFace">
+						<span class="face">
+							<img class="face" src="img/login_logo.png" alt="">
+							<span class="changeBJ"></span>
+							<span class="changeTxt">修改头像</span>
+						</span><br/>
+						<span class="userName" name="userName" alt="" title=""></span>
+					</div>
+					<div style="border: 1px solid rgb(211,211,211); border-top: none; float: left">
+						<ul class="userSetU1">
+							<!-- <li><i class="fa fa-envelope-o"></i>Change email</li> -->
+							<!-- <li class="change_userName"><i class="fa fa-user"></i>Change user name</li> -->
+							<li class="change_password"><i class="fa fa-key"></i>Change password</li>
+							<!-- <li><i class="fa fa-bell-o"></i>提醒设置</li> -->
+						</ul>
+						<div class="userSetLogout">
+							<div class="exit">
+								<span class="logout">
+									<i class="fa fa-power-off"></i>
+									Exit
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+										<!--用户邮件-->
+										<!-- 	<div class="user_message">
+												<div></div>
+												<i class="fa fa-envelope"></i>
+												<sup class="badge">1</sup>
+											</div> -->
+										<!--用户通知-->
+											<!-- <div class="user_tongzhi">
+												<div></div>
+												<i class="fa fa-bell"></i>
+												<sup class="badge">11</sup>
+											</div> -->
+										<!--用户退出-->
+											<!-- <div class="user_tuichu">
+												<div></div>
+												<i class="fa fa-power-off"></i>
+											</div> -->
+		</div>
+	<!--App-->
+		<div class="QR_code">
+			<div class="QR_codeTip">
+				<span><i class="fa fa-mobile"></i></span>
+				<span>App</span>
+			</div>
+			<div class="QR_codeBox">
+				<div class="QR_codeAndroid">
+	                <div class="QR_codeAndroidBox">
+	                    <div class="QR_codeAndroidPic">
+	                        <div class="QR_codeAndroidTitle">
+	                            <i class="fa fa-android"></i>
+	                        </div>
+	                        <a href="" target="_blank">Local download</a>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="QR_codeIos">
+					<div class="QR_codeIosBox">
+	                    <div class="QR_codeIosPic">
+	                        <div class="QR_codeIosTitle">
+	                            <i class="fa fa-apple"></i>
+	                        </div>
+	                        <a href="" target="_blank">Local download</a>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="QR_codeFooter">Scan QR code to get App</div>
+			</div>
+		</div>
+
+	</div>
+
+<!-- 侧边栏 -->
+	<nav class="sider_slider navbar-default" style="">
+		<div class="sidebar-collapse">
+			<div class="side_menu">
+		<!-- 图表 -->
+				<ul class="outline_information side_menu_item">
+					<h5>
+						<span>
+							<!-- <i class="fa fa-list-ul"></i> -->
+						</span>
+						<span>Outline</span>
+						<span><i class="fa fa-caret-up"></i></span>
+					</h5>
+					<li class="overview" style="background-color: rgb(238,238,238);">
+						<a href="javascript:void(0);" style="color: rgb(199,0,18);font-size: 16px;">
+							<span><i></i></span>
+							<span>Overview</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div style="height: 30px; top: 0;"></div>
+					</li>
+				</ul>
+		<!-- 基础信息管理 -->
+				<ul class="base_information side_menu_item">
+					<h5>
+						<!-- <span><i class="fa fa-sitemap"></i></span> -->
+						<span>
+							<!-- <img src="img/basicData.png" style="margin-bottom: 6px;"> -->
+						</span>
+						<span>Basic data</span>
+						<span><i class="fa fa-caret-up"></i></span>
+					</h5>
+					<li class="organizations">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Organization</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="locations">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Locations</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="deviceTypes">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Device types</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="devices">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Devices</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="engineers">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Engineers</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="customers">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Customers</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="outSources outSourcesHidden">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Out sources</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="failureTypes">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Failure types</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="checkItems">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Regular check items</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="appVersions">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>App versions</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="swDays">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>System working days</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+				</ul>
+		<!-- 保养管理 -->
+				<ul class="maintain_management side_menu_item">
+					<h5>
+						<!-- <span><i class="fa fa-wrench"></i></span> -->
+						<span>
+							<!-- <img src="img/maintain.png" style="margin-bottom: 6px;"> -->
+						</span>
+						<span>Maintain</span>
+						<span><i class="fa fa-caret-up"></i></span>
+					</h5>
+					<li class="maintainItems">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Maintain items</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="maintainPlans">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Maintain plans</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+				</ul>
+		<!-- 工单管理 -->
+				<ul class="task_management side_menu_item">
+					<h5>
+						<span>
+							<!-- <i class="fa fa-newspaper-o"></i> -->
+						</span>
+						<!-- <span><img src="img/task.png"></i></span> -->
+						<span>Tasks</span>
+						<span><i class="fa fa-caret-up"></i></span>
+					</h5>
+					<li class="repairTasks">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Repair tasks</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="maintainTasks">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Maintain tasks</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="projectTasks">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Project tasks</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+				</ul>
+		<!-- 工作日志管理 -->
+				<ul class="report_management side_menu_item">
+					<h5>
+						<span>
+							<!-- <i class="fa fa-file-text"></i> -->
+						</span>
+						<!-- <span><img src="img/report.png"></i></span> -->
+						<span>Reports</span>
+						<span><i class="fa fa-caret-up"></i></span>
+					</h5>
+					<li class="weeklyReports">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Weekly reports</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="monthlyReports">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Monthly reports</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="yearlyReports">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Yearly reports</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="scanReports">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Scan quantity reports</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+					<li class="maintainReports">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Maintenance reports</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+				</ul>
+		<!-- 签到管理 -->
+				<ul class="engineer_management side_menu_item">
+					<h5>
+						<span>
+							<!-- <i class="fa fa-user"></i> -->
+						</span>
+						<!-- <span><img src="img/engineer.png"></i></span> -->
+						<span>Engineer</span>
+						<span><i class="fa fa-caret-up"></i></span>
+					</h5>
+					<li class="checkInHistory">
+						<a href="javascript:void(0);">
+							<span><i></i></span>
+							<span>Check in history</span>
+							<strong class="fa fa-angle-left"></strong>
+						</a>
+						<div></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+<!-- 右侧内容 -->
+    <div class="ws_content">
+        <div class="ws_main" id="main">			<!-- 此处加了滚动条 -->
+        	<div class="main_item">
+				<div>
+				</div>
+        	</div>	<!-- main_item		   闭合标签-->
+		</div>		<!-- ws_main		   闭合标签-->
+    </div>			<!-- ws_content 内容页 闭合标签-->
+</div>				<!-- wrapper    页面   闭合标签-->
+
+
+
+
+<!--弹出层内容-->
+<!--登录用户上传照片-->
+	<form  id="user_photoUrl_submit" style="display: none;">
+		<div class="ws_upImgDiv">
+			<div class="ws_upImgDiv_slimScroll">
+				<div class="row">
+	                <div class="col-xs-12"></div>
+	                <div class="col-xs-12">
+	                    <div class="upload-file upload-fileOnlyImg upload-fileImg">
+	                        <div class="default tcenter">
+	                            <span class="default-img">
+	                                <i class="fa fa-picture-o fa-4x"></i>
+	                                <i class="fa fa-plus fa-2x plus"></i>
+	                            </span>
+	                        </div>
+	                    </div>
+	                    <a class="btn  selectImages upImgBtn upImgUser fr">Select image</a>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+    </form>
+<!--登录用户		修改密码弹出层-->
+	<form action="" id="change_password_submit" style="display: none;">
+		<div class="row layer_p change_password_old">
+			<label class="col-sm-4">Old password</label>
+			<div class="col-sm-8 layerNoPickText">
+				<input  id="change_passwordOld" type="text" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="row layer_p change_password_new1">
+			<label class="col-sm-4">New password</label>
+			<div class="col-sm-8 layerNoPickText">
+				<input  id="change_passwordNew1" type="text" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="row layer_p change_password_new2">
+			<label class="col-sm-4">Confirm password</label>
+			<div class="col-sm-8 layerNoPickText">
+				<input  id="change_passwordNew2" type="text" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="layer_for change_password_for">
+			<input type="button" value="Cancel">
+			<input id="change_passwordBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+
+<!--组织 	新增弹出层-->
+	<form action="" id="organization_add_submit" style="display: none;">
+		<div class="row layer_p organization_add_name">
+			<label class="col-sm-3">Name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="organization_addName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="layer_for organization_add_for">
+			<input type="button" value="Cancel">
+			<input id="organization_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--组织 	修改弹出层-->
+	<form action="" id="organization_change_submit" style="display: none;">
+		<div class="row layer_p organization_change_name">
+			<label class="col-sm-3">Name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="organization_changeName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="layer_for organization_change_for">
+			<input type="button" value="Cancel">
+			<input id="organization_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+
+<!--设备类型 	新增弹出层-->
+	<form action="" id="sblx_plus_submit" style="display: none;">
+		<div class="row layer_p sblx_plus_name">
+			<label class="col-sm-3">Name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="sblx_plusName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p sblx_plus_num">
+			<label class="col-sm-3">Number<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="sblx_plusNum" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p sblx_plus_series ">
+			<label class="col-sm-3">Series<span></span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="sblx_plusSeries" placeholder="Please select series" readonly="readonly">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right sblx_plusSeries_pick">
+					<div>
+						<li><a href="javascript:void(0);" data-value="暂无系列">[No series]</a></li>
+						<li><a href="javascript:void(0);" data-value="CX">CX</a></li>
+						<li><a href="javascript:void(0);" data-value="MB">MB</a></li>
+						<li><a href="javascript:void(0);" data-value="MT">MT</a></li>
+						<li><a href="javascript:void(0);" data-value="XT">XT</a></li>
+					</div>
+		        </ul>
+		      </div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p sblx_add_size">
+			<label class="col-sm-3">Device size</label>
+			<div class="col-sm-9" id="sblx_addSize">
+				<div class="col-sm-6"><input type="radio" name="sblxSize_radio" value="false" id="sblx_addSize_big"><label for="sblx_addSize_big">Big</label></div>
+				<div class="col-sm-6"><input type="radio" name="sblxSize_radio" value="true"  id="sblx_addSize_small"><label for="sblx_addSize_small">Small</label></div>
+			</div>
+		</div>
+		<div class="layer_for sblx_plus_for">
+			<input type="button" value="Cancel">
+			<input id="sblx_plusBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--设备类型 	修改弹出层-->
+	<form action="" id="sblx_change_submit" style="display: none;">
+		<div class="row layer_p sblx_change_name">
+			<label class="col-sm-3">Name</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="sblx_changeName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p sblx_change_num">
+			<label class="col-sm-3">Number</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="sblx_changeNum" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p sblx_change_series ">
+			<label class="col-sm-3">Series</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="sblx_changeSeries" placeholder="Please select series" readonly="readonly">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        <!-- <span class="caret"></span> -->
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right sblx_changeSeries_pick" style="height: 130px;">
+					<div>
+						<li><a href="javascript:void(0);" data-value="CX">CX</a></li>
+						<li><a href="javascript:void(0);" data-value="MB">MB</a></li>
+						<li><a href="javascript:void(0);" data-value="MT">MT</a></li>
+						<li><a href="javascript:void(0);" data-value="XT">XT</a></li>
+					</div>
+		        </ul>
+		      </div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p sblx_change_size">
+			<label class="col-sm-3">Device size</label>
+			<div class="col-sm-9" id="sblx_changeSize">
+				<div class="col-sm-6"><input type="radio" name="sblxSize_radio" value="false" id="sblx_changeSize_big"><label for="sblx_changeSize_big">Big</label></div>
+				<div class="col-sm-6"><input type="radio" name="sblxSize_radio" value="true"  id="sblx_changeSize_small"><label for="sblx_changeSize_small">Small</label></div>
+			</div>
+		</div>
+		<div class="layer_for sblx_change_for">
+			<input type="button" value="Cancel">
+			<input id="sblx_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--安检设备 	新增弹出层-->
+	<form action="" id="aj_add_submit" style="display: none;">
+		<div class="row layer_p aj_add_num">
+			<label class="col-sm-3">Number<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="aj_addNum" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p aj_add_type">
+			<label class="col-sm-3">Device type<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="aj_addType" placeholder="Please select device type" readonly="readonly">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        <!-- <span class="caret"></span> -->
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right aj_addType_pick">
+					<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p aj_add_location">
+			<label class="col-sm-3">Location<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="aj_addLocation" placeholder="Please select location" readonly="readonly">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        <!-- <span class="caret"></span> -->
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right aj_addLocation_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p aj_add_longitude">
+			<label class="col-sm-3">Longitude<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="aj_addLongitude" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p aj_add_latitude">
+			<label class="col-sm-3">Latitude<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="aj_addLatitude" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p aj_add_engineer">
+			<label class="col-sm-3">Engineer<span></span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="aj_addEngineer" placeholder="Please select engineer" readonly="readonly">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right aj_addEngineer_pick">
+					<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p aj_add_warrantyBeginDate">
+			<label class="col-sm-4">Warranty begin date</label>
+		    <div class="col-sm-8 input-group">
+		      <input type="text" class="form-control" id="aj_addWarrantyBeginDate" placeholder="Please select warranty begin date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="aj_add_warrantyBeginDateBtn"  class="btn btn-default dropdown-toggle" for="aj_addWarrantyBeginDate">
+		        	<strong class="fa fa-calendar"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p aj_add_warrantyEndDate">
+			<label class="col-sm-4">Warranty end date</label>
+		    <div class="col-sm-8 input-group">
+		      <input type="text" class="form-control" id="aj_addWarrantyEndDate" placeholder="Please select warranty end date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="aj_add_warrantyEndDateBtn" class="btn btn-default dropdown-toggle" for="aj_addWarrantyEndDate">
+		        	<strong class="fa fa-calendar" style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p aj_add_workTimeBegin">
+			<label class="col-sm-4">Work time begin</label>
+		    <div class="col-sm-8 input-group">
+		      <input type="text" class="form-control" id="aj_addWorkTimeBegin" placeholder="Please select work begin tim" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="aj_add_workTimeBeginBtn"  class="btn btn-default dropdown-toggle" for="aj_addWorkTimeBegin">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p aj_add_workTimeEnd">
+			<label class="col-sm-4">Work time end</label>
+		    <div class="col-sm-8 input-group">
+		      <input type="text" class="form-control" id="aj_addWorkTimeEnd" placeholder="Please select work end time" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="aj_add_workTimeEndBtn"  class="btn btn-default dropdown-toggle" for="aj_addWorkTimeEnd">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="layer_for aj_add_for">
+			<input type="button" value="Cancel">
+			<input id="aj_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--安检设备 	修改弹出层-->
+	<form action="" id="aj_change_submit" style="display: none;">
+		<div class="row layer_p aj_change_num">
+			<label for="aj_changeNum" class="col-sm-3">Number</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="aj_changeNum" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)" >
+			</div>
+		</div>
+		<div class="row layer_p aj_change_type">
+			<label class="col-sm-3">Device type</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="aj_changeType" placeholder="Please select device type" readonly>
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        <!-- <span class="caret"></span> -->
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right aj_changeType_pick">
+		        	<div>
+		        		<!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> -->
+		        	</div>
+		        </ul>
+		      </div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p aj_change_location">
+			<label class="col-sm-3">Location</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="aj_changeLocation" placeholder="Please select location" readonly/>
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right aj_changeLocation_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p aj_change_longitude">
+			<label class="col-sm-3">Longitude</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="aj_changeLongitude" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p aj_change_latitude">
+			<label class="col-sm-3">Latitude</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="aj_changeLatitude" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p aj_change_engineer">
+			<label class="col-sm-3">Engineer</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="aj_changeEngineer" placeholder="Please select engineer" readonly="readonly">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right aj_changeEngineer_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p aj_change_warrantyBeginDate">
+			<label class="col-sm-4">Warranty begin date</label>
+		    <div class="col-sm-8 input-group">
+		      <input type="text" class="form-control" id="aj_changeWarrantyBeginDate" placeholder="Please select warranty begin date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="aj_change_warrantyBeginDateBtn"  class="btn btn-default dropdown-toggle" for="aj_changeWarrantyBeginDate">
+		        	<strong class="fa fa-calendar"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p aj_change_warrantyEndDate">
+			<label class="col-sm-4">Warranty end date</label>
+		    <div class="col-sm-8 input-group">
+		      <input type="text" class="form-control" id="aj_changeWarrantyEndDate" placeholder="Please select warranty end date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="aj_change_warrantyEndDateBtn" class="btn btn-default dropdown-toggle" for="aj_changeWarrantyEndDate">
+		        	<strong class="fa fa-calendar" style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p aj_change_workTimeBegin">
+			<label class="col-sm-4">Work time begin</label>
+		    <div class="col-sm-8 input-group">
+		      <input type="text" class="form-control" id="aj_changeWorkTimeBegin" placeholder="Please select work begin time" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="aj_change_workTimeBeginBtn"  class="btn btn-default dropdown-toggle" for="aj_changeWorkTimeBegin">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p aj_change_workTimeEnd">
+			<label class="col-sm-4">Work time end</label>
+		    <div class="col-sm-8 input-group">
+		      <input type="text" class="form-control" id="aj_changeWorkTimeEnd" placeholder="Please select work end time" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="aj_change_workTimeEndBtn"  class="btn btn-default dropdown-toggle" for="aj_changeWorkTimeEnd">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p aj_change_photoes">
+			<label class="col-sm-3">Photoes</label>
+			<div class="col-sm-9 layerNoPickText">
+				<div>
+					<div class="upload-file upload-fileOnlyImg upload-fileImg" style="min-height: 150px;">
+	                    <!-- <div class="default tcenter">
+	                        <span class="default-img">
+	                            <i class="fa fa-picture-o fa-4x"></i>
+	                            <i class="fa fa-plus fa-2x plus"></i>
+	                        </span>
+	                    </div> -->
+	                </div>
+	                <a class="btn  selectImages upImgBtn upImgAjChange" style="width: 150px; float: right;">Upload photoes</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="layer_for aj_change_for">
+			<input type="button" value="Cancel">
+			<input id="aj_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--工程师 		新增弹出层-->
+	<form action="" id="engineer_add_submit" style="display: none;">
+
+		<div class="row layer_p engineer_add_englishName">
+			<label class="col-sm-3">English name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="engineer_addEnglishName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+
+		<div class="row layer_p engineer_add_chineseName">
+			<label class="col-sm-3">Chinese name<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="engineer_addChineseName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+
+		<div class="row layer_p engineer_add_jobTitle">
+			<label class="col-sm-3">Job title<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="engineer_addJobTitle" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+
+		<div class="row layer_p engineer_add_email">
+			<label class="col-sm-3">Email<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="engineer_addEmail" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+
+		<div class="row layer_p engineer_add_phone">
+			<label class="col-sm-3">Phone<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="engineer_addPhone" type="text" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="layer_for engineer_add_for">
+			<input type="button" value="Cancel">
+			<input id="engineer_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--工程师 		修改弹出层-->
+	<form action="" id="engineer_change_submit" style="display: none;">
+		<div class="row layer_p engineer_change_englishName">
+			<label class="col-sm-3">English name</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="engineer_changeEnglishName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p engineer_change_chineseName">
+			<label class="col-sm-3">Chinese name</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="engineer_changeChineseName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p engineer_change_jobTitle">
+			<label class="col-sm-3">Job title</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="engineer_changeJobTitle" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p engineer_change_email">
+			<label class="col-sm-3">Email</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="engineer_changeEmail" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p engineer_change_phone">
+			<label class="col-sm-3">Phone</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="engineer_changePhone" type="text" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="row layer_p engineer_change_role">
+			<label class="col-sm-3">Roles</label>
+			<div class="col-sm-9" id="engineer_changeRole" style="line-height: 30px;">
+				<div class="col-sm-3"><input type="checkbox" name="Engineer" value="Engineer" id="engineer_changeRole_engineer"><label for="engineer_changeRole_engineer" style="">Engineer</label></div>
+				<div class="col-sm-3"><input type="checkbox" name="Officer" value="Officer" id="engineer_changeRole_officer"><label for="engineer_changeRole_officer" style="">Officer</label></div>
+				<div class="col-sm-3"><input type="checkbox" name="Manager" value="Manager" id="engineer_changeRole_manager"><label for="engineer_changeRole_manager" style="">Manager</label></div>
+				<div class="col-sm-3"><input type="checkbox" name="Admin" value="Admin" id="engineer_changeRole_admin"><label for="engineer_changeRole_admin" style="">Admin</label></div>
+				<div class="col-sm-3"><input type="checkbox" name="Others" value="Others" id="engineer_changeRole_others"><label for="engineer_changeRole_others" style="">Others</label></div>
+			</div>
+		</div>
+		<div class="layer_for engineer_change_for">
+			<input type="button" value="Cancel">
+			<input id="engineer_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--工程师 		绑定用户弹出层-->
+	<form action="" id="engineer_bindUser_submit" style="display: none;" autocomplete="off">
+		<div class="row layer_p engineer_bind_userName">
+			<label class="col-sm-3">User name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="engineer_bindUserName" type="text" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)" autocomplete="off">
+			</div>
+		</div>
+		<div class="row layer_p engineer_bind_userPassword">
+			<label class="col-sm-3">Password<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input type="password" name="clear" autocomplete="off" style="position: fixed; bottom:-9999px;">
+				<input  id="engineer_bindUserPassword" type="password" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)" autocomplete="off">
+			</div>
+		</div>
+		<div class="row layer_p engineer_bind_role">
+			<label class="col-sm-3">Roles<span></span></label>
+			<div class="col-sm-9" id="engineer_bindRole" style="line-height: 30px;">
+				<div class="col-sm-3"><input type="checkbox" name="role_engineer" value="Engineer" id="engineer_bindRole_engineer"><label for="engineer_bindRole_engineer" style="">Engineer</label></div>
+				<div class="col-sm-3"><input type="checkbox" name="role_officer" value="Officer" id="engineer_bindRole_officer"><label for="engineer_bindRole_officer" style="">Officer</label></div>
+				<div class="col-sm-3"><input type="checkbox" name="role_manager" value="Manager" id="engineer_bindRole_manager"><label for="engineer_bindRole_manager" style="">Manager</label></div>
+				<div class="col-sm-3"><input type="checkbox" name="role_admin" value="Admin" id="engineer_bindRole_admin"><label for="engineer_bindRole_admin" style="">Admin</label></div>
+				<div class="col-sm-3"><input type="checkbox" name="role_others" value="Others" id="engineer_bindRole_others"><label for="engineer_bindRole_others" style="">Others</label></div>
+			</div>
+		</div>
+		<div class="layer_for engineer_bind_for">
+			<input type="button" value="Cancel">
+			<input id="engineer_bindBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--工程师 		绑定的用户重置密码弹出层-->
+	<form action="" id="engineer_reset_submit" style="display: none;" autocomplete="off">
+		<div class="row layer_p engineer_reset_password">
+			<label class="col-sm-3">New password<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input type="password" name="clear" autocomplete="off" style="position: fixed; bottom:-9999px;">
+				<input  id="engineer_resetPassword" type="password" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)" autocomplete="off">
+			</div>
+		</div>
+		<div class="layer_for engineer_reset_for">
+			<input type="button" value="Cancel">
+			<input id="engineer_resetBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--工程师 		修改照片 弹出层-->
+	<form  id="engineer_detail_photoUrl_submit" style="display: none;">
+		<div class="ws_upImgDiv">
+			<div class="ws_upImgDiv_slimScroll">
+				<div class="row">
+	                <div class="col-xs-12"></div>
+	                <div class="col-xs-12">
+	                    <div class="upload-file upload-fileOnlyImg upload-fileImg">
+	                        <div class="default tcenter">
+	                            <span class="default-img">
+	                                <i class="fa fa-picture-o fa-4x"></i>
+	                                <i class="fa fa-plus fa-2x plus"></i>
+	                            </span>
+	                        </div>
+	                    </div>
+	                    <a class="btn  selectImages upImgBtn upImgEngineer fr">Select image</a>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+    </form>
+<!--客户 		新增弹出层-->
+	<form action="" id="customer_add_submit" style="display: none;">
+		<div class="row layer_p customer_add_englishName">
+			<label class="col-sm-3">English name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="customer_addEnglishName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<!-- <div class="row layer_p customer_add_org">
+			<label class="col-sm-3">Organization<span></span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="customer_addOrg" placeholder="Please select organization" readonly="readonly" data-value="0">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        <span class="caret"></span>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right customer_addOrg_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="1">1</a></li>
+		        	</div>
+		        </ul>
+		      </div>/btn-group
+		    </div>/input-group
+		</div> -->
+		<div class="row layer_p customer_add_location">
+			<label class="col-sm-3">Location<span></span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="customer_addLocation" placeholder="Please select location" readonly="readonly">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        <!-- <span class="caret"></span> -->
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right customer_addLocation_pick">
+		        	<div>
+		        		<!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> -->
+		        	</div>
+		        </ul>
+		      </div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p customer_add_jobTitle">
+			<label class="col-sm-3">Job title<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="customer_addJobTitle" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p customer_add_email">
+			<label class="col-sm-3">Email<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="customer_addEmail" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p customer_add_phone">
+			<label class="col-sm-3">Phone<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="customer_addPhone" type="text" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="layer_for customer_add_for">
+			<input type="button" value="Cancel">
+			<input id="customer_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--客户 		修改弹出层-->
+	<form action="" id="customer_change_submit" style="display: none;">
+		<div class="row layer_p customer_change_englishName">
+			<label class="col-sm-3">English name</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="customer_changeEnglishName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<!-- <div class="row layer_p customer_change_org">
+			<label class="col-sm-3">Organization</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="customer_changeOrg" placeholder="Please select organization" readonly="readonly">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        <span class="caret"></span>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right customer_changeOrg_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="1">1</a></li>
+		        	</div>
+		        </ul>
+		      </div>/btn-group
+		    </div>/input-group
+		</div> -->
+		<div class="row layer_p customer_change_location">
+			<label class="col-sm-3">Location</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="customer_changeLocation" placeholder="Please select location" readonly="readonly">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right customer_changeLocation_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p customer_change_jobTitle">
+			<label class="col-sm-3">Job title</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="customer_changeJobTitle" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p customer_change_email">
+			<label class="col-sm-3">Email</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="customer_changeEmail" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+
+		<div class="row layer_p customer_change_phone">
+			<label class="col-sm-3">Phone</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="customer_changePhone" type="text" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="row layer_p customer_change_role">
+			<label class="col-sm-3">Role</label>
+			<div class="col-sm-9" id="customer_changeRole">
+				<div class="col-sm-6"><input type="radio" name="customerRole_radio" value="XRayManager" id="customer_changeRole_xRayManager"><label for="customer_changeRole_xRayManager">XRayManager</label></div>
+				<div class="col-sm-6"><input type="radio" name="customerRole_radio" value="Supervisor"  id="customer_changeRole_supervisor"><label for="customer_changeRole_supervisor">Supervisor</label></div>
+			</div>
+		</div>
+		<div class="layer_for customer_change_for">
+			<input type="button" value="Cancel">
+			<input id="customer_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--客户 		绑定用户弹出层-->
+	<form action="" id="customer_bindUser_submit" style="display: none;" autocomplete="off">
+		<div class="row layer_p customer_bind_userName">
+			<label class="col-sm-3">User name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="customer_bindUserName" type="text" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)" autocomplete="off">
+			</div>
+		</div>
+		<div class="row layer_p customer_bind_userPassword">
+			<label class="col-sm-3">Password<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input type="password" name="clear" autocomplete="off" style="position: fixed; bottom:-9999px;">
+				<input  id="customer_bindUserPassword" type="password" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)" autocomplete="off">
+			</div>
+		</div>
+		<div class="row layer_p customer_bind_role">
+			<label class="col-sm-3">Role<span></span></label>
+			<div class="col-sm-9" id="customer_bindRole">
+				<div class="col-sm-6"><input type="radio" name="customerRole_radio" value="XRayManager" id="customer_bindRole_xRayManager"><label for="customer_bindRole_xRayManager">XRayManager</label></div>
+				<div class="col-sm-6"><input type="radio" name="customerRole_radio" value="Supervisor"  id="customer_bindRole_supervisor"><label for="customer_bindRole_supervisor">Supervisor</label></div>
+			</div>
+		</div>
+		<div class="layer_for customer_bind_for">
+			<input type="button" value="Cancel">
+			<input id="customer_bindBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--客户 		绑定的用户重置密码 弹出层-->
+	<form action="" id="customer_reset_submit" style="display: none;" autocomplete="off">
+		<div class="row layer_p customer_reset_password">
+			<label class="col-sm-3">New password<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input type="password" name="clear" autocomplete="off" style="position: fixed; bottom:-9999px;">
+				<input  id="customer_resetPassword" type="password" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)" autocomplete="off">
+			</div>
+		</div>
+		<div class="layer_for customer_reset_for">
+			<input type="button" value="Cancel">
+			<input id="customer_resetBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--客户 		修改照片弹出层-->
+	<form action="" id="customer_detail_photoUrl_submit" style="display: none;">
+		<div class="ws_upImgDiv">
+			<div class="ws_upImgDiv_slimScroll">
+				<div class="row">
+	                <div class="col-xs-12"></div>
+	                <div class="col-xs-12">
+	                    <div class="upload-file upload-fileOnlyImg upload-fileImg">
+	                        <div class="default tcenter">
+	                            <span class="default-img">
+	                                <i class="fa fa-picture-o fa-4x"></i>
+	                                <i class="fa fa-plus fa-2x plus"></i>
+	                            </span>
+	                        </div>
+	                    </div>
+	                    <a class="btn  selectImages upImgBtn upImgCustomer">Select image</a>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+    </form>
+<!--外协人员 	新增弹出层-->
+	<form action="" id="outSource_add_submit" style="display: none;">
+		<div class="row layer_p outSource_add_englishName">
+			<label class="col-sm-3">English name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="outSource_addEnglishName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p outSource_add_jobTitle">
+			<label class="col-sm-3">Job title<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="outSource_addJobTitle" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p outSource_add_email">
+			<label class="col-sm-3">Email<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="outSource_addEmail" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p outSource_add_phone">
+			<label class="col-sm-3">Phone<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="outSource_addPhone" type="text" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="row layer_p outSource_add_company">
+			<label class="col-sm-3">Company<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="outSource_addCompany" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="layer_for outSource_add_for">
+			<input type="button" value="Cancel">
+			<input id="outSource_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--外协人员 	修改弹出层-->
+	<form action="" id="outSource_change_submit" style="display: none;">
+		<div class="row layer_p outSource_change_englishName">
+			<label class="col-sm-3">English name</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="outSource_changeEnglishName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p outSource_change_jobTitle">
+			<label class="col-sm-3">Job title</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="outSource_changeJobTitle" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p outSource_change_email">
+			<label class="col-sm-3">Email</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="outSource_changeEmail" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p outSource_change_phone">
+			<label class="col-sm-3">Phone</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="outSource_changePhone" type="text" placeholder="Type up to 20 characters" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="row layer_p outSource_change_company">
+			<label class="col-sm-3">Company</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="outSource_changeCompany" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="layer_for outSource_change_for">
+			<input type="button" value="Cancel">
+			<input id="outSource_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--外协人员 	新增修改照片 弹出层-->
+	<form action="" id="outSource_detail_photoUrl_submit" style="display: none;">
+		<div class="ws_upImgDiv">
+			<div class="ws_upImgDiv_slimScroll">
+				<div class="row">
+	                <div class="col-xs-12"></div>
+	                <div class="col-xs-12">
+	                    <div class="upload-file upload-fileOnlyImg upload-fileImg">
+	                        <div class="default tcenter">
+	                            <span class="default-img">
+	                                <i class="fa fa-picture-o fa-4x"></i>
+	                                <i class="fa fa-plus fa-2x plus"></i>
+	                            </span>
+	                        </div>
+	                    </div>
+	                    <a class="btn  selectImages upImgBtn upImgOutSource">Select image</a>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+    </form>
+<!--位置 		新增弹出层-->
+	<form action="" id="location_add_submit" style="display: none;">
+		<!-- <div class="row layer_p location_add_org">
+			<label class="col-sm-3">Organization<span></span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="location_addOrg" placeholder="Please select organization" readonly="readonly">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        <span class="caret"></span>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right location_addOrg_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="1">1</a></li>
+		        	</div>
+		        </ul>
+		      </div>/btn-group
+		    </div>/input-group
+		</div> -->
+		<div class="row layer_p location_add_name">
+			<label class="col-sm-3">Name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="location_addName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+
+		<div class="row layer_p location_add_longitude">
+			<label class="col-sm-3">Longitude<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="location_addLongitude" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+
+		<div class="row layer_p location_add_latitude">
+			<label class="col-sm-3">Latitude<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="location_addLatitude" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="layer_for location_add_for">
+			<input type="button" value="Cancel">
+			<input id="location_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--位置 		修改弹出层-->
+	<form action="" id="location_change_submit" style="display: none;">
+		<!-- <div class="row layer_p location_change_org">
+			<label class="col-sm-3">Organization<span></span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="location_changeOrg" placeholder="Please select organization" readonly="readonly">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        <span class="caret"></span>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right location_changeOrg_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="1">1</a></li>
+		        	</div>
+		        </ul>
+		      </div>/btn-group
+		    </div>/input-group
+		</div> -->
+		<div class="row layer_p location_change_name">
+			<label class="col-sm-3">Name</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="location_changeName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p location_change_longitude">
+			<label class="col-sm-3">Longitude</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="location_changeLongitude" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+
+		<div class="row layer_p location_change_latitude">
+			<label class="col-sm-3">Latitude</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="location_changeLatitude" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="layer_for location_change_for">
+			<input type="button" value="Cancel">
+			<input id="location_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--故障类型 	新增弹出层-->
+	<form action="" id="failureType_add_submit" style="display: none;">
+		<div class="row layer_p failureType_add_name">
+			<label class="col-sm-3">Name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="failureType_addName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="layer_for failureType_add_for">
+			<input type="button" value="Cancel">
+			<input id="failureType_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--故障类型 	修改弹出层-->
+	<form action="" id="failureType_change_submit" style="display: none;">
+		<div class="row layer_p failureType_change_name">
+			<label class="col-sm-3">Name</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="failureType_changeName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="layer_for failureType_change_for">
+			<input type="button" value="Cancel">
+			<input id="failureType_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--常规检查项 	新增弹出层-->
+	<form action="" id="checkItem_add_submit" style="display: none;">
+		<div class="row layer_p checkItem_add_name">
+			<label class="col-sm-3">Name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="checkItem_addName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="layer_for checkItem_add_for">
+			<input type="button" value="Cancel">
+			<input id="checkItem_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--常规检查项 	修改弹出层-->
+	<form action="" id="checkItem_change_submit" style="display: none;">
+		<div class="row layer_p checkItem_change_name">
+			<label class="col-sm-3">Name</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="checkItem_changeName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="layer_for checkItem_change_for">
+			<input type="button" value="Cancel">
+			<input id="checkItem_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--App 		新增弹出层-->
+	<form action="" id="appVersion_add_submit" style="display: none;">
+		<div class="row layer_p appVersion_add_type">
+			<label class="col-sm-3">App type<span>*</span></label>
+			<div class="col-sm-9" id="appVersion_addType">
+				<div class="col-sm-6"><input type="radio" name="appVersionAddType" value="Android" id="appVersionAddAndroid"><label for="appVersionAddAndroid">Android</label></div>
+				<div class="col-sm-6"><input type="radio" name="appVersionAddType" value="IOS"  id="ppVersionAddIos"><label for="ppVersionAddIos">IOS</label></div>
+			</div>
+		</div>
+		<div class="row layer_p appVersion_add_name">
+			<label class="col-sm-3">Name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="appVersion_addName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p appVersion_add_bulid">
+			<label class="col-sm-3">Bulid<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="appVersion_addBulid" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p appVersion_add_url">
+			<label class="col-sm-3">Url<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="appVersion_addUrl" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,200)" oninput="checkStrNum(this,200)" onpropertychange="checkStrNum(this,200)">
+			</div>
+		</div>
+		<div class="layer_for appVersion_add_for">
+			<input type="button" value="Cancel">
+			<input id="appVersion_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--App 		修改弹出层-->
+	<form action="" id="appVersion_change_submit" style="display: none;">
+		<div class="row layer_p appVersion_change_type">
+			<label class="col-sm-3">App type<span>*</span></label>
+			<div class="col-sm-9" id="appVersion_changeType">
+				<div class="col-sm-6"><input type="radio" name="appVersionChangeType" value="Android" id="appVersionChangeAndroid"><label for="appVersionChangeAndroid">Android</label></div>
+				<div class="col-sm-6"><input type="radio" name="appVersionChangeType" value="IOS"  id="ppVersionChangeIos"><label for="ppVersionChangeIos">IOS</label></div>
+			</div>
+		</div>
+		<div class="row layer_p appVersion_change_name">
+			<label class="col-sm-3">Name<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="appVersion_changeName" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p appVersion_change_bulid">
+			<label class="col-sm-3">Bulid<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="appVersion_changeBulid" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,50)" oninput="checkStrNum(this,50)" onpropertychange="checkStrNum(this,50)">
+			</div>
+		</div>
+		<div class="row layer_p appVersion_change_url">
+			<label class="col-sm-3">Url<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="appVersion_changeUrl" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,200)" oninput="checkStrNum(this,200)" onpropertychange="checkStrNum(this,200)">
+			</div>
+		</div>
+		<div class="layer_for appVersion_change_for">
+			<input type="button" value="Cancel">
+			<input id="appVersion_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--System working days 	新增弹出层-->
+	<form action="" id="swDays_add_submit" style="display: none;">
+		<div class="row layer_p swDays_add_year">
+			<label class="col-sm-3">Year<span>*</span></label>
+			<div class="col-sm-9 input-group">
+				<input type="text" class="form-control" id="swDays_addYear" placeholder="Please select year" readonly="readonly">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<strong class="fa fa-caret-down"></strong>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right swDays_addYear_pick">
+						<div>
+						</div>
+					</ul>
+				</div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p swDays_add_month ">
+			<label class="col-sm-3">Month<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+				<input type="text" class="form-control" id="swDays_addMonth" placeholder="Please select month" readonly="readonly">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<strong class="fa fa-caret-down"></strong>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right swDays_addMonth_pick">
+						<div>
+							<li><a href="javascript:void(0);" data-value="0">Jan</a></li>
+							<li><a href="javascript:void(0);" data-value="1">Feb</a></li>
+							<li><a href="javascript:void(0);" data-value="2">Mar</a></li>
+							<li><a href="javascript:void(0);" data-value="3">Apr</a></li>
+							<li><a href="javascript:void(0);" data-value="4">May</a></li>
+							<li><a href="javascript:void(0);" data-value="5">Jun</a></li>
+							<li><a href="javascript:void(0);" data-value="6">Jul</a></li>
+							<li><a href="javascript:void(0);" data-value="7">Aug</a></li>
+							<li><a href="javascript:void(0);" data-value="8">Sep</a></li>
+							<li><a href="javascript:void(0);" data-value="9">Oct</a></li>
+							<li><a href="javascript:void(0);" data-value="10">Nov</a></li>
+							<li><a href="javascript:void(0);" data-value="11">Dec</a></li>
+						</div>
+					</ul>
+				</div><!-- /btn-group -->
+			</div><!-- /input-group -->
+		</div>
+		<div class="row layer_p swDays_add_device">
+			<label class="col-sm-3">Device<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="swDays_addDevice" readonly="readonly" placeholder="Please select device">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right swDays_add_device_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p swDays_add_holidayDays">
+			<label class="col-sm-3">Holiday days<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="swDays_addHolidayDays" type="text" placeholder="Non-negative integer less than 16" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="row layer_p swDays_add_maintainDays">
+			<label class="col-sm-3">Maintain Days<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="swDays_addMaintainDays" type="text" placeholder="Non-negative integer less than 16" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="layer_for swDays_add_for">
+			<input type="button" value="Cancel">
+			<input id="swDays_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--System working days 	编辑弹出层-->
+	<form action="" id="swDays_change_submit" style="display: none;">
+		<div class="row layer_p swDays_change_year">
+			<label class="col-sm-3">Year<span>*</span></label>
+			<div class="col-sm-9 input-group">
+				<input type="text" class="form-control" id="swDays_changeYear" placeholder="Please select year" readonly="readonly">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<strong class="fa fa-caret-down"></strong>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right swDays_changeYear_pick">
+						<div>
+						</div>
+					</ul>
+				</div><!-- /btn-group -->
+		    </div><!-- /input-group -->
+		</div>
+		<div class="row layer_p swDays_change_month ">
+			<label class="col-sm-3">Month<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+				<input type="text" class="form-control" id="swDays_changeMonth" placeholder="Please select month" readonly="readonly">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<strong class="fa fa-caret-down"></strong>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right swDays_changeMonth_pick">
+						<div>
+							<li><a href="javascript:void(0);" data-value="0">Jan</a></li>
+							<li><a href="javascript:void(0);" data-value="1">Feb</a></li>
+							<li><a href="javascript:void(0);" data-value="2">Mar</a></li>
+							<li><a href="javascript:void(0);" data-value="3">Apr</a></li>
+							<li><a href="javascript:void(0);" data-value="4">May</a></li>
+							<li><a href="javascript:void(0);" data-value="5">Jun</a></li>
+							<li><a href="javascript:void(0);" data-value="6">Jul</a></li>
+							<li><a href="javascript:void(0);" data-value="7">Aug</a></li>
+							<li><a href="javascript:void(0);" data-value="8">Sep</a></li>
+							<li><a href="javascript:void(0);" data-value="9">Oct</a></li>
+							<li><a href="javascript:void(0);" data-value="10">Nov</a></li>
+							<li><a href="javascript:void(0);" data-value="11">Dec</a></li>
+						</div>
+					</ul>
+				</div><!-- /btn-group -->
+			</div><!-- /input-group -->
+		</div>
+		<div class="row layer_p swDays_change_device">
+			<label class="col-sm-3">Device<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="swDays_changeDevice" readonly="readonly" placeholder="Please select device">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right swDays_change_device_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p swDays_change_holidayDays">
+			<label class="col-sm-3">Holiday days<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="swDays_changeHolidayDays" type="text" placeholder="Non-negative integer less than 16" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="row layer_p swDays_change_maintainDays">
+			<label class="col-sm-3">Maintain Days<span></span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="swDays_changeMaintainDays" type="text" placeholder="Non-negative integer less than 16" onfocus="checkStrNum(this,20)" oninput="checkStrNum(this,20)" onpropertychange="checkStrNum(this,20)">
+			</div>
+		</div>
+		<div class="layer_for swDays_change_for">
+			<input type="button" value="Cancel">
+			<input id="swDays_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+
+<!--保养项目 	新增弹出层-->
+	<form action="" id="maintainItems_add_submit" style="display: none;">
+		<div class="row layer_p maintainItems_add_title">
+			<label class="col-sm-3">Title<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="maintainItems_addTitle" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p layer_p_more maintainItems_add_description">
+			<label class="col-sm-3">Description</label>
+			<div class="col-sm-9 layerNoPickText">
+				<textarea id="maintainItems_addDescription" rows="4" placeholder="Type up to 500 characters" onfocus="checkStrNum(this,500)" oninput="checkStrNum(this,500)" onpropertychange="checkStrNum(this,500)"></textarea>
+			</div>
+		</div>
+		<div class="layer_for maintainItems_add_for">
+			<input type="button" value="Cancel">
+			<input id="maintainItems_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--保养项目 	修改弹出层-->
+	<form action="" id="maintainItems_change_submit" style="display: none;">
+		<div class="row layer_p maintainItems_change_title">
+			<label class="col-sm-3">Title</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="maintainItems_changeTitle" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p layer_p_more maintainItems_change_description">
+			<label class="col-sm-3">Description</label>
+			<div class="col-sm-9 layerNoPickText">
+				<textarea id="maintainItems_changeDescription" rows="4" placeholder="Type up to 500 characters" onfocus="checkStrNum(this,500)" oninput="checkStrNum(this,500)" onpropertychange="checkStrNum(this,500)"></textarea>
+			</div>
+		</div>
+		<div class="layer_for maintainItems_change_for">
+			<input type="button" value="Cancel">
+			<input id="maintainItems_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--保养计划 	新增弹出层-->
+	<form action="" id="maintainPlan_add_submit" style="display: none;">
+		<div class="row layer_p maintainPlan_add_device">
+			<label class="col-sm-3">Device<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_addDevice" readonly="readonly" placeholder="Please select device">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_add_device_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_add_planType">
+			<label class="col-sm-3">Plan type<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_addPlanType" readonly="readonly" placeholder="Please select plan type">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_add_planType_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="Monthly">Monthly</a></li>
+		        		<li><a href="javascript:void(0);" data-value="Quarterly">Quarterly</a></li>
+		        		<li><a href="javascript:void(0);" data-value="Semiannually">Semiannually</a></li>
+		        		<li><a href="javascript:void(0);" data-value="Annually">Annually</a></li>
+		        	</div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_add_year">
+			<label class="col-sm-3">Year<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_addYear" placeholder="Please select year" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="maintainPlan_add_yearBtn"  class="btn btn-default dropdown-toggle" for="maintainPlan_addYear">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_add_number">
+			<label class="col-sm-3">Number<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_addNumber" readonly="readonly" placeholder="Please select number">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_add_number_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="1">1</a></li>
+		        		<li><a href="javascript:void(0);" data-value="2">2</a></li>
+		        		<li><a href="javascript:void(0);" data-value="4">4</a></li>
+		        		<li><a href="javascript:void(0);" data-value="5">5</a></li>
+		        		<li><a href="javascript:void(0);" data-value="7">7</a></li>
+		        		<li><a href="javascript:void(0);" data-value="8">8</a></li>
+		        		<li><a href="javascript:void(0);" data-value="10">10</a></li>
+		        		<li><a href="javascript:void(0);" data-value="11">11</a></li>
+		        	</div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_add_planDate">
+			<label class="col-sm-3">Plan date</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_addPlanDate" placeholder="Please select plan date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="maintainPlan_add_planDateBtn"  class="btn btn-default dropdown-toggle" for="maintainPlan_addPlanDate">
+		        	<strong class="fa fa-calendar"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_add_dueDate">
+			<label class="col-sm-3">Due date</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_addDueDate" placeholder="Please select due date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="maintainPlan_add_dueDateBtn" class="btn btn-default dropdown-toggle" for="maintainPlan_addDueDate">
+		        	<strong class="fa fa-calendar" style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_add_engineer">
+			<label class="col-sm-3">engineer</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_addEngineer" readonly="readonly" placeholder="Please select engineer">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_add_engineer_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_add_itemIds" style="height: auto;">
+			<label class="col-sm-3">Items</label>
+			<div class="col-sm-9 main_detail_checkbox" id="maintainPlan_addItemIds">
+				<!-- <div class="col-sm-12">
+					<input type="checkbox"  data-value="" value="Engineer" id="maintainPlan_add_item1">
+					<label for="maintainPlan_add_item1" style="">Engineer</label>
+				</div> -->
+			</div>
+		</div>
+
+
+		<div class="layer_for maintainPlan_add_for">
+			<input type="button" value="Cancel">
+			<input id="maintainPlan_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--保养计划 	批量增加弹出层-->
+	<form action="" id="maintainPlan_batchAdd_submit" style="display: none;">
+		<div class="row layer_p maintainPlan_batchAdd_location">
+			<label class="col-sm-3">Location</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_batchAddLocation" readonly="readonly" placeholder="Please select location">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_batchAdd_location_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_batchAdd_deviceType">
+			<label class="col-sm-3">Device type</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_batchAddDeviceType" readonly="readonly" placeholder="Please select device type">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_batchAdd_deviceType_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_batchAdd_device">
+			<label class="col-sm-3">Device</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_batchAddDevice" readonly="readonly" placeholder="Please select device">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_batchAdd_device_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_batchAdd_planType">
+			<label class="col-sm-3">Plan type<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_batchAddPlanType" readonly="readonly" placeholder="Please select plan type">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_batchAdd_planType_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="Monthly">Monthly</a></li>
+		        		<li><a href="javascript:void(0);" data-value="Quarterly">Quarterly</a></li>
+		        		<li><a href="javascript:void(0);" data-value="Semiannually">Semiannually</a></li>
+		        		<li><a href="javascript:void(0);" data-value="Annually">Annually</a></li>
+		        	</div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_batchAdd_year">
+			<label class="col-sm-3">Year<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_batchAddYear" placeholder="Please select year" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="maintainPlan_batchAdd_yearBtn"  class="btn btn-default dropdown-toggle" for="maintainPlan_batchAddYear">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_batchAdd_number">
+			<label class="col-sm-3">Number</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_batchAddNumber" readonly="readonly" placeholder="Please select number">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_batchAdd_number_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="1">1</a></li>
+		        		<li><a href="javascript:void(0);" data-value="2">2</a></li>
+		        		<li><a href="javascript:void(0);" data-value="4">4</a></li>
+		        		<li><a href="javascript:void(0);" data-value="5">5</a></li>
+		        		<li><a href="javascript:void(0);" data-value="7">7</a></li>
+		        		<li><a href="javascript:void(0);" data-value="8">8</a></li>
+		        		<li><a href="javascript:void(0);" data-value="10">10</a></li>
+		        		<li><a href="javascript:void(0);" data-value="11">11</a></li>
+		        	</div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+
+		<div class="row layer_p maintainPlan_batchAdd_engineer">
+			<label class="col-sm-3">engineer</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_batchAddEngineer" readonly="readonly" placeholder="Please select engineer">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_batchAdd_engineer_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_batchAdd_itemIds" style="height: auto;">
+			<label class="col-sm-3">Items</label>
+			<div class="col-sm-9 main_detail_checkbox" id="maintainPlan_batchAddItemIds">
+			</div>
+		</div>
+		<div class="row layer_p maintainPlan_batchAdd_itemIds" style="height: auto;">
+			<label class="col-sm-3">Overwrite</label>
+			<div class="col-sm-9" id="maintainPlan_batchAddOverwrite">
+				<div class="col-sm-6">
+					<input type="radio" name="maintainPlan_batchAddOverwriteIs" value="true" id="maintainPlan_batchAddOverwrite_true">
+					<label for="maintainPlan_batchAddOverwrite_true">True</label>
+				</div>
+				<div class="col-sm-6">
+					<input type="radio" name="maintainPlan_batchAddOverwriteIs" value="false" id="maintainPlan_batchAddOverwrite_false">
+					<label for="maintainPlan_batchAddOverwrite_false">False</label>
+				</div>
+			</div>
+		</div>
+		<div class="layer_for maintainPlan_batchAdd_for">
+			<input type="button" value="Cancel">
+			<input id="maintainPlan_batchAddBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--保养计划 	修改弹出层-->
+	<form action="" id="maintainPlan_change_submit" style="display: none;">
+		<div class="row layer_p maintainPlan_change_device">
+			<label class="col-sm-3">Device</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_changeDevice" readonly="readonly" placeholder="Please select device">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_change_device_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_change_planType">
+			<label class="col-sm-3">Plan type</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_changePlanType" readonly="readonly" placeholder="Please select plan type">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_change_planType_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="Monthly">Monthly</a></li>
+		        		<li><a href="javascript:void(0);" data-value="Quarterly">Quarterly</a></li>
+		        		<li><a href="javascript:void(0);" data-value="Semiannually">Semiannually</a></li>
+		        		<li><a href="javascript:void(0);" data-value="Annually">Annually</a></li>
+		        	</div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_change_year">
+			<label class="col-sm-3">Year</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_changeYear" placeholder="Please select year" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="maintainPlan_change_yearBtn"  class="btn btn-default dropdown-toggle" for="maintainPlan_changeYear">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_change_number">
+			<label class="col-sm-3">Number</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_changeNumber" readonly="readonly" placeholder="Please select number">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_change_number_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="1">1</a></li>
+		        		<li><a href="javascript:void(0);" data-value="2">2</a></li>
+		        		<li><a href="javascript:void(0);" data-value="4">4</a></li>
+		        		<li><a href="javascript:void(0);" data-value="5">5</a></li>
+		        		<li><a href="javascript:void(0);" data-value="7">7</a></li>
+		        		<li><a href="javascript:void(0);" data-value="8">8</a></li>
+		        		<li><a href="javascript:void(0);" data-value="10">10</a></li>
+		        		<li><a href="javascript:void(0);" data-value="11">11</a></li>
+		        	</div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_change_planDate">
+			<label class="col-sm-3">Plan date</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_changePlanDate" placeholder="Please select plan date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="maintainPlan_change_planDateBtn"  class="btn btn-default dropdown-toggle" for="maintainPlan_changePlanDate">
+		        	<strong class="fa fa-calendar"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_change_dueDate">
+			<label class="col-sm-3">Due date</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_changeDueDate" placeholder="Please select due date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="maintainPlan_change_dueDateBtn" class="btn btn-default dropdown-toggle" for="maintainPlan_changeDueDate">
+		        	<strong class="fa fa-calendar" style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_change_engineer">
+			<label class="col-sm-3">engineer</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainPlan_changeEngineer" readonly="readonly" placeholder="Please select engineer">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right maintainPlan_change_engineer_pick">
+		        	<div><!-- <li><a href="javascript:void(0);" data-value="1">1</a></li> --></div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_change_itemIds" style="height: auto;">
+			<label class="col-sm-3">Items</label>
+			<div class="col-sm-9 main_detail_checkbox" id="maintainPlan_changeItemIds">
+			</div>
+		</div>
+		<div class="layer_for maintainPlan_change_for">
+			<input type="button" value="Cancel">
+			<input id="maintainPlan_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--保养计划 	分配弹出层-->
+	<form action="" id="maintainPlan_assignTask_submit" style="display: none;">
+		<div class="row layer_p maintainPlan_assignTo">
+			<label class="col-sm-3">Assign to<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="mpAssignTo" readonly="readonly" placeholder="Please select ennineer">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right mpAssignTo_pick"><div></div></ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_assignPlanDate">
+			<label class="col-sm-3">Plan date<span></span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="mpAssignPlanDate" placeholder="Please select plan date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="mpAssignPlanDateBtn"  class="btn btn-default dropdown-toggle" for="mpAssignPlanDate">
+		        	<strong class="fa fa-calendar"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p maintainPlan_assignDueDate">
+			<label class="col-sm-3">Due date<span></span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="mpAssignDueDate" placeholder="Please select due date" readonly="readonly">
+		      <div class="input-group-btn" for="mpAssignDueDate">
+		        <label type="button" id="mpAssignDueDateBtn" class="btn btn-default dropdown-toggle" for="mpAssignDueDate">
+		        	<strong class="fa fa-calendar" style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="layer_for maintainPlan_assignTask_for">
+			<input type="button" value="Cancel">
+			<input id="maintainPlan_assignTaskBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+
+<!--周报 		新增弹出层-->
+	<form action="" id="weeklyReports_add_submit" style="display: none;">
+		<div class="row layer_p weeklyReports_add_date">
+			<label class="col-sm-3">Date<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="weeklyReports_addDate" placeholder="Please select date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="weeklyReports_addDateBtn"  class="btn btn-default dropdown-toggle" for="weeklyReports_addDate">
+		        	<strong class="fa fa-calendar"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="layer_for weeklyReports_add_for">
+			<input type="button" value="Cancel">
+			<input id="weeklyReports_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--周报 		修改弹出层-->
+	<form action="" id="weeklyReports_change_submit" style="display: none;">
+		<div class="row layer_p weeklyReports_change_header">
+			<label for="weeklyReports_changeHeader" class="col-sm-3">Header</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="weeklyReports_changeHeader" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p weeklyReports_change_title">
+			<label for="weeklyReports_changeTitle" class="col-sm-3">Title</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="weeklyReports_changeTitle" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p weeklyReports_change_approved">
+			<label for="weeklyReports_changeApproved" class="col-sm-3">Approved</label>
+			<div class="col-sm-9" id="weeklyReports_changeApproved">
+				<div class="col-sm-3">
+					<input type="radio" name="weeklyReportsApproved_radio" value="true" id="weeklyReports_changeApproved_yes">
+					<label for="weeklyReports_changeApproved_yes">YES</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="radio" name="weeklyReportsApproved_radio" value="false"  id="weeklyReports_changeApproved_no">
+					<label for="weeklyReports_changeApproved_no">NO</label>
+				</div>
+			</div>
+		</div>
+		<div class="row layer_p layer_p_more weeklyReports_change_notes">
+			<label for="weeklyReports_changeNotes" class="col-sm-3">Notes</label>
+			<div class="col-sm-9 layerNoPickText">
+				<textarea id="weeklyReports_changeNotes" rows="4" placeholder="Type up to 500 characters" onfocus="checkStrNum(this,500)" oninput="checkStrNum(this,500)" onpropertychange="checkStrNum(this,500)"></textarea>
+			</div>
+		</div>
+		<div class="layer_for weeklyReports_change_for">
+			<input type="button" value="Cancel">
+			<input id="weeklyReports_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--周报行week 		修改弹出层-->
+	<form action="" id="wkDWeekRow_change_submit" style="display: none;">
+		<div class="row layer_p">
+			<label class="col-sm-3">Location</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDWeekRow_changeLocation" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Syst.No/ID</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDWeekRow_changeSystemID" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p wkDWeekRow_change_no">
+			<label class="col-sm-3">No</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="wkDWeekRow_changeNo" readonly placeholder="Please select no">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right wkDWeekRow_change_no_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="0">0</a></li>
+		        		<li><a href="javascript:void(0);" data-value="1">1</a></li>
+		        	</div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<!-- <div class="row layer_p wkDWeekRow_change_scanQuantity">
+			<label class="col-sm-3">Scan Qty</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDWeekRow_changeScanQuantity" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div> -->
+		<div class="row layer_p wkDWeekRow_change_failureSum">
+			<label class="col-sm-3">Failure Sum</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDWeekRow_changeFailureSum" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p wkDWeekRow_change_downHours">
+			<label class="col-sm-3">Down-Time(H)</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDWeekRow_changeDownHours" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p wkDWeekRow_change_enigneer">
+			<label class="col-sm-3">ENG.</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDWeekRow_changeEngineer" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p wkDWeekRow_change_state">
+			<label class="col-sm-3">RWMARK</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDWeekRow_changeState" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="layer_for wkDWeekRow_change_for">
+			<input type="button" value="Cancel">
+			<input id="wkDWeekRow_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--周报行Repair 	修改弹出层-->
+	<form action="" id="wkDRepairRow_change_submit" style="display: none;">
+		<div class="row layer_p wkDRepairRow_change_location">
+			<label class="col-sm-3">Location</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDRepairRow_changeLocation" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">SystemID</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDRepairRow_changeSystemID" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Created time</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="wkDRepairRow_changeCreateTime" placeholder="Please select created time" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="wkDRepairRow_changeCreateTimeBtn"  class="btn btn-default dropdown-toggle" for="wkDRepairRow_changeCreateTime">
+		        	<strong class="fa fa-calendar"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Finish time</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="wkDRepairRow_changeFinishTime" placeholder="Please select finish time" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="wkDRepairRow_changeFinishTimeBtn"  class="btn btn-default dropdown-toggle" for="wkDRepairRow_changeFinishTime">
+		        	<strong class="fa fa-calendar"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Down-Time(H)</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDRepairRow_changeDownHours" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Content</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDRepairRow_changeContent" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Failure types</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDRepairRow_changeFailureTypes" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Repair parts</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDRepairRow_changeRepairParts" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Engineer</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDRepairRow_changeEngineer" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Reapir time</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDRepairRow_changeRepairTime" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p layer_p_more">
+			<label class="col-sm-3">Repair description</label>
+			<div class="col-sm-9 layerNoPickText">
+				<textarea id="wkDRepairRow_changeDescription" rows="4" placeholder="Type up to 2000 characters" onfocus="checkStrNum(this,2000)" oninput="checkStrNum(this,2000)" onpropertychange="checkStrNum(this,2000)"></textarea>
+			</div>
+		</div>
+		<div class="layer_for wkDRepairRow_change_for">
+			<input type="button" value="Cancel">
+			<input id="wkDRepairRow_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+
+<!--月报 		新增弹出层-->
+	<form action="" id="monthlyReports_add_submit" style="display: none;">
+		<div class="row layer_p monthlyReports_add_year">
+			<label class="col-sm-3">Year<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="monthlyReports_addYear" placeholder="Please select year" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="monthlyReports_addYearBtn"  class="btn btn-default dropdown-toggle" for="monthlyReports_addYear">
+		        	<strong class="fa fa-caret-down"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p monthlyReports_add_month">
+			<label class="col-sm-3">Month<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="monthlyReports_addMonth" readonly="readonly" placeholder="Please select month">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right monthlyReports_add_month_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="0">Jan</a></li>
+						<li><a href="javascript:void(0);" data-value="1">Feb</a></li>
+						<li><a href="javascript:void(0);" data-value="2">Mar</a></li>
+						<li><a href="javascript:void(0);" data-value="3">Apr</a></li>
+						<li><a href="javascript:void(0);" data-value="4">May</a></li>
+						<li><a href="javascript:void(0);" data-value="5">Jun</a></li>
+						<li><a href="javascript:void(0);" data-value="6">Jul</a></li>
+						<li><a href="javascript:void(0);" data-value="7">Aug</a></li>
+						<li><a href="javascript:void(0);" data-value="8">Sep</a></li>
+						<li><a href="javascript:void(0);" data-value="9">Oct</a></li>
+						<li><a href="javascript:void(0);" data-value="10">Nov</a></li>
+						<li><a href="javascript:void(0);" data-value="11">Dec</a></li>
+		        	</div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="layer_for monthlyReports_add_for">
+			<input type="button" value="Cancel">
+			<input id="monthlyReports_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--月报 		修改弹出层-->
+	<form action="" id="monthlyReports_change_submit" style="display: none;">
+		<div class="row layer_p monthlyReports_change_header">
+			<label for="monthlyReports_changeHeader" class="col-sm-3">Header</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="monthlyReports_changeHeader" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p monthlyReports_change_title">
+			<label for="monthlyReports_changeTitle" class="col-sm-3">Title</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="monthlyReports_changeTitle" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p monthlyReports_change_approved">
+			<label for="monthlyReports_changeApproved" class="col-sm-3">Approved</label>
+			<div class="col-sm-9" id="monthlyReports_changeApproved">
+				<div class="col-sm-3">
+					<input type="radio" name="monthlyReportsApproved_radio" value="true" id="monthlyReports_changeApproved_yes">
+					<label for="monthlyReports_changeApproved_yes">YES</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="radio" name="monthlyReportsApproved_radio" value="false"  id="monthlyReports_changeApproved_no">
+					<label for="monthlyReports_changeApproved_no">NO</label>
+				</div>
+			</div>
+		</div>
+		<div class="row layer_p layer_p_more monthlyReports_change_notes">
+			<label for="monthlyReports_changeNotes" class="col-sm-3">Notes</label>
+			<div class="col-sm-9 layerNoPickText">
+				<textarea id="monthlyReports_changeNotes" rows="4" placeholder="Type up to 500 characters" onfocus="checkStrNum(this,500)" oninput="checkStrNum(this,500)" onpropertychange="checkStrNum(this,500)"></textarea>
+			</div>
+		</div>
+		<div class="layer_for monthlyReports_change_for">
+			<input type="button" value="Cancel">
+			<input id="monthlyReports_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--月报行 		修改弹出层-->
+	<form action="" id="monthlyReportRow_change_submit" style="display: none;">
+		<div class="row layer_p">
+			<label class="col-sm-3">Location</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="monthlyReportRow_changeLocation" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Syst.No/ID</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="monthlyReportRow_changeSystemID" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p monthlyReportRow_change_no">
+			<label class="col-sm-3">No</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="monthlyReportRow_changeNo" readonly placeholder="Please select no">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right monthlyReportRow_change_no_pick">
+		        	<div></div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p monthlyReportRow_change_failureSum">
+			<label class="col-sm-3">Failure Sum</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="monthlyReportRow_changeFailureSum" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p monthlyReportRow_change_downHours">
+			<label class="col-sm-3">Down-Time(H)</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="monthlyReportRow_changeDownHours" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p monthlyReportRow_change_workHours">
+			<label class="col-sm-3">Work-Time(H)</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="monthlyReportRow_changeWorkHours" type="text" placeholder="Type up to 50 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="layer_for monthlyReportRow_change_for">
+			<input type="button" value="Cancel">
+			<input id="monthlyReportRow_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+
+<!--年报 		新增弹出层-->
+	<form action="" id="yearlyReports_add_submit" style="display: none;">
+		<div class="row layer_p yearlyReports_add_year">
+			<label class="col-sm-3">Year<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="yearlyReports_addYear" placeholder="Please select year" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="yearlyReports_addYearBtn"  class="btn btn-default dropdown-toggle" for="yearlyReports_addYear">
+		        	<strong class="fa fa-caret-down"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="layer_for yearlyReports_add_for">
+			<input type="button" value="Cancel">
+			<input id="yearlyReports_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--年报 		修改弹出层-->
+	<form action="" id="yearlyReports_change_submit" style="display: none;">
+		<div class="row layer_p yearlyReports_change_header">
+			<label for="yearlyReports_changeHeader" class="col-sm-3">Header</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="yearlyReports_changeHeader" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p yearlyReports_change_title">
+			<label for="yearlyReports_changeTitle" class="col-sm-3">Title</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="yearlyReports_changeTitle" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p yearlyReports_change_approved">
+			<label for="yearlyReports_changeApproved" class="col-sm-3">Approved</label>
+			<div class="col-sm-9" id="yearlyReports_changeApproved">
+				<div class="col-sm-3">
+					<input type="radio" name="yearlyReportsApproved_radio" value="true" id="yearlyReports_changeApproved_yes">
+					<label for="yearlyReports_changeApproved_yes">YES</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="radio" name="yearlyReportsApproved_radio" value="false"  id="yearlyReports_changeApproved_no">
+					<label for="yearlyReports_changeApproved_no">NO</label>
+				</div>
+			</div>
+		</div>
+		<div class="row layer_p layer_p_more yearlyReports_change_notes">
+			<label for="yearlyReports_changeNotes" class="col-sm-3">Notes</label>
+			<div class="col-sm-9 layerNoPickText">
+				<textarea id="yearlyReports_changeNotes" rows="4" placeholder="Type up to 500 characters" onfocus="checkStrNum(this,500)" oninput="checkStrNum(this,500)" onpropertychange="checkStrNum(this,500)"></textarea>
+			</div>
+		</div>
+		<div class="layer_for yearlyReports_change_for">
+			<input type="button" value="Cancel">
+			<input id="yearlyReports_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--年报行Repair 	修改弹出层-->
+	<form action="" id="wkDYReapirRow_change_submit" style="display:none;">
+		<div class="row layer_p wkDYReapirRow_change_no">
+			<label class="col-sm-3">No</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="wkDYReapirRow_changeNo" readonly placeholder="Please select no">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right wkDYReapirRow_change_no_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="0">0</a></li>
+		        		<li><a href="javascript:void(0);" data-value="1">1</a></li>
+		        	</div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p wkDYReapirRow_change_location">
+			<label class="col-sm-3">Location</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDYReapirRow_changeLocation" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Date</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="wkDYReapirRow_changeDate" placeholder="Please select date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="wkDYReapirRow_changeDateBtn"  class="btn btn-default dropdown-toggle" for="wkDYReapirRow_changeDate">
+		        	<strong class="fa fa-calendar"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Fault type</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDYReapirRow_changeFaultType" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Reapir-Time(H)</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDYReapirRow_changeRepairHours" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Down-Time(H)</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDYReapirRow_changeDownHours" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Engineer</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDYReapirRow_changeEngineer" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="layer_for wkDYReapirRow_change_for">
+			<input type="button" value="Cancel">
+			<input id="wkDRepairRow_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+
+<!--Scan reports 		新增弹出层-->
+	<form action="" id="scanReports_add_submit" style="display: none;">
+		<div class="row layer_p scanReports_add_year">
+			<label class="col-sm-3">Year<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="scanReports_addYear" placeholder="Please select year" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="scanReports_addYearBtn"  class="btn btn-default dropdown-toggle" for="scanReports_addYear">
+		        	<strong class="fa fa-caret-down"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="layer_for scanReports_add_for">
+			<input type="button" value="Cancel">
+			<input id="scanReports_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--Scan reports 		修改弹出层-->
+	<form action="" id="scanReports_change_submit" style="display: none;">
+		<div class="row layer_p scanReports_change_header">
+			<label for="scanReports_changeHeader" class="col-sm-3">Header</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="scanReports_changeHeader" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p scanReports_change_title">
+			<label for="scanReports_changeTitle" class="col-sm-3">Title</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="scanReports_changeTitle" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p scanReports_change_approved">
+			<label for="scanReports_changeApproved" class="col-sm-3">Approved</label>
+			<div class="col-sm-9" id="scanReports_changeApproved">
+				<div class="col-sm-3">
+					<input type="radio" name="scanReportsApproved_radio" value="true" id="scanReports_changeApproved_yes">
+					<label for="scanReports_changeApproved_yes">YES</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="radio" name="scanReportsApproved_radio" value="false"  id="scanReports_changeApproved_no">
+					<label for="scanReports_changeApproved_no">NO</label>
+				</div>
+			</div>
+		</div>
+		<div class="row layer_p layer_p_more scanReports_change_notes">
+			<label for="scanReports_changeNotes" class="col-sm-3">Notes</label>
+			<div class="col-sm-9 layerNoPickText">
+				<textarea id="scanReports_changeNotes" rows="4" placeholder="Type up to 500 characters" onfocus="checkStrNum(this,500)" oninput="checkStrNum(this,500)" onpropertychange="checkStrNum(this,500)"></textarea>
+			</div>
+		</div>
+		<div class="layer_for scanReports_change_for">
+			<input type="button" value="Cancel">
+			<input id="scanReports_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--Scan reports row 	修改弹出层-->
+	<form action="" id="wkDScanRow_change_submit" style="display:none;">
+		<div class="row layer_p wkDScanRow_change_no">
+			<label class="col-sm-3">No</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="wkDScanRow_changeNo" readonly placeholder="Please select no">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        	<strong class="fa fa-caret-down"></strong>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right wkDScanRow_change_no_pick">
+		        	<div>
+		        		<li><a href="javascript:void(0);" data-value="0">0</a></li>
+		        		<li><a href="javascript:void(0);" data-value="1">1</a></li>
+		        	</div>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p wkDScanRow_change_location">
+			<label class="col-sm-3">Location</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDScanRow_changeLocation" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p wkDScanRow_change_systemID">
+			<label class="col-sm-3">Syst.No/ID</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDScanRow_changeSystemID" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Jan</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeJan" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Feb</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeFeb" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Mar</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeMar" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Apr</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeApr" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">May</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeMay" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Jun</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeJun" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Jul</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeJul" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Aug</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeAug" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Sep</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeSep" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Oct</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeOct" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Nov</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeNov" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Dec</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input class="wkDScanRow_changeAv" id="wkDScanRow_changeDec" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="layer_for wkDScanRow_change_for">
+			<input type="button" value="Cancel">
+			<input id="wkDScanRow_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+
+<!--Maintain reports 		新增弹出层-->
+	<form action="" id="maintainReports_add_submit" style="display: none;">
+		<div class="row layer_p maintainReports_add_year">
+			<label class="col-sm-3">Year<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="maintainReports_addYear" placeholder="Please select year" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="maintainReports_addYearBtn"  class="btn btn-default dropdown-toggle" for="maintainReports_addYear">
+		        	<strong class="fa fa-caret-down"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="layer_for maintainReports_add_for">
+			<input type="button" value="Cancel">
+			<input id="maintainReports_addBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--Maintain reports 		修改弹出层-->
+	<form action="" id="maintainReports_change_submit" style="display: none;">
+		<div class="row layer_p maintainReports_change_header">
+			<label for="maintainReports_changeHeader" class="col-sm-3">Header</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="maintainReports_changeHeader" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p maintainReports_change_title">
+			<label for="maintainReports_changeTitle" class="col-sm-3">Title</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="maintainReports_changeTitle" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p maintainReports_change_approved">
+			<label for="maintainReports_changeApproved" class="col-sm-3">Approved</label>
+			<div class="col-sm-9" id="maintainReports_changeApproved">
+				<div class="col-sm-3">
+					<input type="radio" name="maintainReportsApproved_radio" value="true" id="maintainReports_changeApproved_yes">
+					<label for="maintainReports_changeApproved_yes">YES</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="radio" name="maintainReportsApproved_radio" value="false"  id="maintainReports_changeApproved_no">
+					<label for="maintainReports_changeApproved_no">NO</label>
+				</div>
+			</div>
+		</div>
+		<div class="row layer_p layer_p_more maintainReports_change_notes">
+			<label for="maintainReports_changeNotes" class="col-sm-3">Notes</label>
+			<div class="col-sm-9 layerNoPickText">
+				<textarea id="maintainReports_changeNotes" rows="4" placeholder="Type up to 500 characters" onfocus="checkStrNum(this,500)" oninput="checkStrNum(this,500)" onpropertychange="checkStrNum(this,500)"></textarea>
+			</div>
+		</div>
+		<div class="layer_for maintainReports_change_for">
+			<input type="button" value="Cancel">
+			<input id="maintainReports_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+<!--Maintain reports row	修改弹出层-->
+	<form action="" id="wkDMaintainRow_change_submit" style="display: none;">
+		<div class="row layer_p wkDMaintainRow_change_location">
+			<label class="col-sm-3">Location<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDMaintainRow_changeLocation" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">SystemID<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDMaintainRow_changeSystemID" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Level<span>*</span></label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDMaintainRow_changeLevel" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Start date<span>*</span></label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="wkDMaintainRow_changeStartDate" placeholder="Please select start date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="wkDMaintainRow_changeStartDateBtn"  class="btn btn-default dropdown-toggle" for="wkDMaintainRow_changeStartDate">
+		        	<strong class="fa fa-calendar"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">End date</label>
+		    <div class="col-sm-9 input-group">
+		      <input type="text" class="form-control" id="wkDMaintainRow_changeEndDate" placeholder="Please select end date" readonly="readonly">
+		      <div class="input-group-btn">
+		        <label type="button" id="wkDMaintainRow_changeEndDateBtn"  class="btn btn-default dropdown-toggle" for="wkDMaintainRow_changeEndDate">
+		        	<strong class="fa fa-calendar"  style="margin-left: -2px;"></strong>
+		        </label>
+		      </div>
+		    </div>
+		</div>
+		<div class="row layer_p wkDMaintainRow_change_FinishStatus">
+			<label for="wkDMaintainRow_changeFinishStatus" class="col-sm-3">Finish status</label>
+			<div class="col-sm-9" id="wkDMaintainRow_changeFinishStatus">
+				<div class="col-sm-3">
+					<input type="radio" name="wkDMaintainRowFinishStatus_radio" value="true" id="wkDMaintainRow_changeFinishStatus_yes">
+					<label for="wkDMaintainRow_changeFinishStatus_yes">YES</label>
+				</div>
+				<div class="col-sm-3">
+					<input type="radio" name="wkDMaintainRowFinishStatus_radio" value="false"  id="wkDMaintainRow_changeFinishStatus_no">
+					<label for="wkDMaintainRow_changeApproved_no">NO</label>
+				</div>
+			</div>
+		</div>
+		<div class="row layer_p">
+			<label class="col-sm-3">Engineer</label>
+			<div class="col-sm-9 layerNoPickText">
+				<input  id="wkDMaintainRow_changeEngineer" type="text" placeholder="Type up to 100 characters" onfocus="checkStrNum(this,100)" oninput="checkStrNum(this,100)" onpropertychange="checkStrNum(this,100)">
+			</div>
+		</div>
+		<div class="layer_for wkDMaintainRow_change_for">
+			<input type="button" value="Cancel">
+			<input id="wkDMaintainRow_changeBtn" type="submit" value="Submit" class="">
+		</div>
+	</form>
+
+<!-- echarts图表 -->
+<!-- 	<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+	<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+	<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+	<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+	<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script> -->
+
+<!--JS引用文件-->
+	<script src="ku/jquery-2.2.3.min.js"></script>						<!--jQuery 文件-->
+	<script src="ku/layer/layer.min.js"></script>							<!--弹出层 layer插件-->
+	<script>layer.msg('<i class="fa fa-spinner fa-spin" style="margin-right: 10px;"></i>Loading...',{ time : 5*60*1000, shade : [ 0.4, '#000',true ] }); </script>
+	<!-- <script>layer.load(1);</script> -->
+	<script src="ku/jquery-ui-1.12.0/jquery-ui.min.js"></script>		<!--jQuery UI 文件-->
+	<script src="ku/jquery.slimscroll/jquery.slimscroll.min.js"></script>	<!--滚动条jquery.slimscroll.js插件-->
+	<script src="ku/jquery.qrcode.min.js"></script>
+	<script src="ku/bootstrap/js/bootstrap.min.js"></script>			<!-- Bootstrap -->
+	<script src="ku/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="ku/jquery.pagination.js"></script> 					<!-- jQuery 分页插件-->
+	<script src="ku/echarts/echarts.min.js"></script>
+
+	<script src="js/createWsContentHtml.js?v4"></script>
+
+	<script src="js/ws_ajax.js?v4"></script>
+	<script src="js/getLocalStorageIdArr.js?v4"></script>
+	<script src="js/GlobalFn.js?v4"></script>
+	<script src="js/tdColor.js?v4"></script>
+	<script src="js/allowActions.js?v4"></script>
+
+
+	<script src="js/console.js?v4"></script>
+	<script src="js/script.js?v4"></script>
+
+	<script src="js/popup.js?v4"></script>
+
+	<script src="js/getEcharts.js?v4"></script>
+	<script src="js/upload.js?v4"></script>
+	<script src="js/logout.js?v4"></script>
+	<script src="js/resetPassword.js?v4"></script>
+
+
+
+	<script src="js/consoleSidebarClick.js?v4"></script>
+
+
+
+
+
+</body>
+</html>

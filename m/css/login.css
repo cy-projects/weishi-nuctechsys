@@ -1,0 +1,248 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; }
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:14px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+a,span,input,button,i,textarea,label,button{ display: inline-block; }
+img {border:0;	width: 100%; height: 100%;	vertical-align:middle; }
+table { border-collapse:collapse; }
+html{
+	/*overflow-y: hidden;*/
+	width: 100%;
+	/*min-width: 980px;*/
+	/*height: 100%;*/
+}
+body {
+	font-family: 'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif,'fontawesome';
+    font-size: 14px;
+    line-height: 1.42857143;
+    -webkit-font-smoothing: antialiased;	/*抗锯齿*/
+    -moz-osx-font-smoothing: grayscale;
+    color:#666;
+    background-color: rgb(238,238,238);
+    width: 100%;
+    /*min-width: 980px;*/
+	/*height: 100%;*/
+	/*overflow-y: hidden;*/
+}
+/*双伪元素*/
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+/*a {color:#666; text-decoration:none; }*/
+/*a:hover{color:#C81623;}*/
+a,
+a:hover{ text-decoration: none; }
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}
+s,i,em{font-style:normal;text-decoration:none;}
+
+
+
+.login-top{
+	width: 100%;
+	height: 220px;
+	background: url(../img/login_bg.jpg) no-repeat;
+	background-position: center -70px;
+	background-size: 100% 160%;
+	position: relative;
+}
+.login-top-container{
+	height: 220px;
+	position: relative;
+	padding: 0;
+}
+.login-top .title{
+	text-align: center;
+	font-size: 24px;
+	color: white;
+	padding-top: 50px;
+}
+.login-top .title a{
+	display: inline-block;
+	width: 160px;
+	height: 66px;
+	cursor: pointer;
+}
+.login-top .title img{
+	width: 100%;
+	height: 100%;
+	padding-bottom: 10px;
+}
+.login-form{
+	width: 80%;
+	margin: 0 auto;
+}
+.login-form .form-inner{
+	max-width: 330px;
+	margin: 0 auto;
+	padding: 40px 0 10px 0;
+}
+.login-form .form-inner form {
+	padding: 0 15px;
+}
+.form-horizontal .form-group{
+	margin: 0 -15px 15px -15px;
+	position: relative;
+}
+.form-horizontal input{
+	border: 1px solid #ccc;
+	outline: none;
+}
+.input-group{
+	position: relative;
+	display: table;
+	border-collapse: separate;
+}
+.input-group label{
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	left: 100%;
+	top: 0px;
+	color: red;
+	font-size: 14px;
+	display: inline-table;
+	margin-left: 20px;
+	min-width: 280px;
+	white-space: nowrap;
+}
+.login_btn{
+	width: 100%;
+	height: 46px;
+	line-height: 46px;
+	padding: 0 40px;
+	font-size: 20px;
+	background-color: rgba(0,128,0,0.8);
+	border: 1px solid rgb(177,177,177);
+	border-radius: 5px;
+	color: white;
+	transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
+}
+.login_btn:hover{
+	background-color: rgba(0,128,0,1);
+}
+.horizontal-line{
+	width: 100%;
+	height: 1px;
+	background-color: rgb(177,177,177);
+	margin: 10px 0 30px 0;
+}
+.tb-auth{
+
+}
+.tb-auth a{
+	display: inline-block;
+	margin-bottom: 10px;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 40px;
+	border: 1px solid green;
+	border-radius: 5px;
+	text-align: center;
+	color: green;
+	font-size: 16px;
+	position: relative;
+}
+.tb-auth a:nth-of-type(1){
+	color: rgb(177,177,177);
+	border: 1px solid rgb(177,177,177);
+}
+.tb-auth a i{
+	position: absolute;
+	right: 80px;
+	height: 40px;
+	line-height: 40px;
+	opacity: 0;
+	transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
+}
+.tb-auth a:nth-of-type(1):hover{
+	color: rgb(250,250,250);
+	background-color: rgb(177,177,177);
+	text-decoration: none;
+}
+.tb-auth a:nth-of-type(1):hover i{
+	right: 70px;
+	opacity: 1;
+}
+
+.QR_code_container{
+	padding: 0px;
+	height: 300px;
+}
+.QR_codeTitle{
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 16px;
+}
+.QR_codeApp{
+	width: auto;
+	height: auto;
+	text-align: center;
+}
+
+.QR_codeAndroid,
+.QR_codeIos{
+	width: 165px;
+	height: 160px;
+	display: inline-block;
+}
+.QR_codeAndroidBox,
+.QR_codeIosBox{
+	width: 150px;
+	height: 160px;
+	margin: 0 auto;
+}
+.QR_codeAndroidPic,
+.QR_codeIosPic{
+	width: 150px;
+	height: 150px;
+	border: 10px solid #fff;
+	position: relative;
+}
+.QR_codeAndroidTitle,
+.QR_codeIosTitle{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: green;
+	font-size: 26px;
+	background: #fff;
+	text-align: center;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	border-radius: 5px;
+}
+.QR_code a{
+	display: block;
+	width: 150px;
+	height: 150px;
+	line-height: 150px;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	background: rgba(0,0,0,0);
+	opacity: 0;
+}
+.QR_code a:hover{
+	text-decoration: none;
+}
